@@ -25,11 +25,12 @@ padding-right = 1
 module-margin = 0
 
 modules-left = i3
+modules-center = quote
 modules-right = battery date
 
 [module/quote]
 type = custom/text
-content = It's only after we've lost everything that we're free to do anything
+content = Dare mighty things!
 
 [module/battery]
 type = internal/battery

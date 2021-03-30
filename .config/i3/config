@@ -219,3 +219,8 @@ exec_always --no-startup-id redshift
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 1 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
+
+# Screenshots
+bindsym --release Print exec "scrot -m '/home/anand/Pictures/%s_%H%M_%d.%m.%Y_$wx$h.png'"
+bindsym --release Shift+Print exec "scrot -s '/home/anand/Pictures/%s_%H%M_%d%m%Y_$wx$h.png'"
+bindsym --release $mod+Shift+Print exec "scrot -u -d 4 '/home/anand/Pictures/%s_%H%M_%d%m%Y_$wx$h.png'"
