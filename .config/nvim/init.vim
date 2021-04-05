@@ -7,6 +7,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'davidhalter/jedi-vim'
 Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 set number
@@ -21,6 +22,9 @@ let g:jedi#completions_enabled = 0
 
 filetype on
 filetype indent on
+
+nnoremap <F7> :NERDTreeFind<CR>
+nnoremap <F8> :NERDTreeToggle<CR>
 
 map <F9> :w <bar> !g++ -o  %:r % -std=c++17 && ./%:r <CR>
 map <F10> :q <CR>
