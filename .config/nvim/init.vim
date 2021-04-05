@@ -23,7 +23,12 @@ let g:jedi#completions_enabled = 0
 filetype on
 filetype indent on
 
-nnoremap <F7> :NERDTreeFind<CR>
+set autochdir
+
+let g:NERDTreeChDirMode = 2
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeAutoDeleteBuffer = 1
+
 nnoremap <F8> :NERDTreeToggle<CR>
 
 map <F9> :w <bar> !g++ -o  %:r % -std=c++17 && ./%:r <CR>
