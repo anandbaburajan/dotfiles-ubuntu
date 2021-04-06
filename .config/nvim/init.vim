@@ -31,5 +31,5 @@ let g:NERDTreeAutoDeleteBuffer = 1
 
 nnoremap <F8> :NERDTreeToggle<CR>
 
-map <F9> :w <bar> !g++ -o  %:r % -std=c++17 && ./%:r <CR>
+map <F9> :w <bar> !g++ % -std=c++17 && ./a.out <CR>
 map <F10> :q <CR>
