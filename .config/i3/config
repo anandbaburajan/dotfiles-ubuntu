@@ -224,3 +224,5 @@ bindsym XF86MonBrightnessDown exec light -U 1 # decrease screen brightness
 bindsym --release Print exec "scrot -m '/home/anand/Pictures/%s_%H%M_%d.%m.%Y_$wx$h.png'"
 bindsym --release Shift+Print exec "scrot -s '/home/anand/Pictures/%s_%H%M_%d%m%Y_$wx$h.png'"
 bindsym --release $mod+Shift+Print exec "scrot -u -d 4 '/home/anand/Pictures/%s_%H%M_%d%m%Y_$wx$h.png'"
+
+bindsym $mod+p move workspace to output left

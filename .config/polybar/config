@@ -1,5 +1,7 @@
 [bar/elon]
 
+monitor = ${env:MONITOR:}
+
 font-0 = "Overpass Mono:pixelsize=10;2.25"
 
 scroll-up = i3wm-wsnext
