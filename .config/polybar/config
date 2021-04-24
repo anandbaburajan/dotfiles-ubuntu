@@ -3,6 +3,9 @@
 monitor = ${env:MONITOR:}
 
 font-0 = "Overpass Mono:pixelsize=10;2.25"
+font-1 = "FontAwesome5Free:style=Solid:pixelsize=10;2.25"
+font-2 = "FontAwesome5Free:style=Regular:pixelsize=10;2.25"
+font-3 = "FontAwesome5Brands:style=Regular:pixelsize=10;2.25"
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -17,43 +20,50 @@ foreground = #ffffff
 
 radius = 0.0
 
-# line-size = 1
-# line-color = #f00
-
-# border-size = 2
-# border-color = #00ff00
 padding-left = 1
 padding-right = 1
 module-margin = 0
 
 modules-left = i3
 modules-center = quote
-modules-right = battery date
+modules-right = pulseaudio battery network date
 
 [module/quote]
 type = custom/text
 content = Dare mighty things!
 
+[module/network]
+type = internal/network
+interface = wlo1
+interval = 3.0
+accumulate-stats = true
+unknown-as-up = true
+format-connected = <label-connected>
+label-connected = " %essid%"
+label-connected-padding = 5
+
 [module/battery]
 type = internal/battery
 full-at = 99
-low-at = 30
 battery = BAT0
 adapter = ADP1
 poll-interval = 5
 time-format = %H:%M
 format-charging = <label-charging>
 format-discharging = <label-discharging>
-label-charging = "%percentage%%"
+label-charging = " %percentage%%"
 label-charging-foreground = #1DB954
-label-charging-padding = 5
-label-discharging = "%percentage%%"
-label-discharging-padding = 5
-label-full = Fully charged
-label-full-padding = 5
-label-low = Battery low
-label-low-foreground = #F50057
-label-low-padding = 5
+label-discharging = " %percentage%%"
+label-full = " 100%"
+
+[module/pulseaudio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+use-ui-max = true
+interval = 5
+format-volume = " <label-volume>      "
+label-muted =" 0%      "
+click-right = pavucontrol
 
 [module/i3]
 strip-wsnumbers = true
@@ -73,11 +83,10 @@ label-visible-underline = #555555
 label-visible-padding = 3
 
 label-urgent = %index%
-label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
+label-urgent-background = #2185D0
 label-urgent-padding = 3
 
 [module/date]
 type = internal/date
 interval = 1.0
-date = %A, %d %B    %H:%M %p
+date =  %A, %d %B     %H:%M %p
